@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-royal: #002366;
+  --color-copper: #B87333;
+  --color-crimson: #C41E3A;
+  --color-stone: #EDEBE8;
+  --color-charcoal: #1A1A1A;
+  --color-slate-bg: #D5D8DC;
+  --color-emerald-ok: #2E8B57;
+  --color-cream: #F8F6F1;
+  --color-copper-tint: #F5E6D3;
+}
+
+body { background-color: #D5D8DC; color: #1A1A1A; font-family: system-ui, -apple-system, sans-serif; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #D5D8DC; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #9CA3AF; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #6B7280; }
+
+*:focus-visible { outline: 2px solid #002366; outline-offset: 2px; border-radius: 4px; }
+button, a, input, select, textarea { transition: all 0.2s ease; }
+
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+  body { background: white !important; color: black !important; font-size: 11pt; line-height: 1.4; margin: 0; padding: 0; }
+  nav, footer, button, select, input, textarea, .no-print { display: none !important; }
+  main { padding: 0 !important; max-width: 100% !important; margin: 0 !important; }
+  @page { size: letter; margin: 0.75in; }
+  h1, h2, h3, h4, h5, h6 { page-break-after: avoid; page-break-inside: avoid; color: #002366 !important; font-weight: bold; }
+  h1 { font-size: 20pt; margin: 0 0 12pt 0; }
+  h2 { font-size: 16pt; margin: 18pt 0 10pt 0; }
+  table { width: 100%; border-collapse: collapse; page-break-inside: avoid; margin: 10pt 0; }
+  th, td { border: 1pt solid #D5D8DC; padding: 6pt 8pt; text-align: left; font-size: 10pt; }
+  th { background-color: #002366 !important; color: white !important; font-weight: bold; }
+  tr:nth-child(even) { background-color: #F8F6F1 !important; }
+  .print-section { page-break-inside: avoid; margin: 12pt 0; padding: 10pt; border: 1pt solid #D5D8DC; background: white; }
+  .recharts-wrapper, .recharts-surface { display: none !important; }
+  .print-only { display: block !important; }
+  .page-break { page-break-before: always; }
+  .page-break-after { page-break-after: always; }
+  .print-header { border-bottom: 2pt solid #002366; padding-bottom: 8pt; margin-bottom: 16pt; }
+  .print-footer { border-top: 1pt solid #D5D8DC; padding-top: 8pt; margin-top: 16pt; font-size: 9pt; color: #6B7280; }
+  .metric-card { display: inline-block; width: 30%; margin: 0 1.5% 10pt 0; padding: 8pt; border: 1pt solid #D5D8DC; vertical-align: top; }
+  .metric-value { font-size: 18pt; font-weight: bold; color: #002366; margin: 4pt 0; }
+  .metric-label { font-size: 9pt; color: #6B7280; text-transform: uppercase; }
+  .status-badge { display: inline-block; padding: 2pt 8pt; border-radius: 3pt; font-size: 9pt; font-weight: bold; border: 1pt solid; }
+  .status-acknowledged { background-color: #D1FAE5 !important; color: #2E8B57 !important; border-color: #2E8B57 !important; }
+  .status-pending { background-color: #F5E6D3 !important; color: #B87333 !important; border-color: #B87333 !important; }
+  .status-disputed { background-color: #FEE2E2 !important; color: #C41E3A !important; border-color: #C41E3A !important; }
+  .feedback-item { padding: 8pt; margin: 6pt 0; border-left: 3pt solid #B87333; background-color: #F8F6F1; }
+  .feedback-meta { font-size: 9pt; color: #6B7280; margin-top: 4pt; }
+}
